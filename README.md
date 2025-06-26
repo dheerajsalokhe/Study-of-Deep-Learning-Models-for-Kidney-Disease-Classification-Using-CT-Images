@@ -1,11 +1,7 @@
-# Study-of-Deep-Learning-Models-for-Kidney-Disease-Classification-Using-CT-Images
+# Kidney Disease Classification Using Deep Learning on CT Images
 This project focuses on classifying kidney diseases using CT images and multiple deep learning models: EfficientNetB0, MobileNetV2, ResNet50, InceptionV3, and Vision Transformer (ViT). The dataset used contains annotated CT images categorized into Normal, Cyst, Stone, and Tumor.
 
-
-# Kidney Disease Classification Using Deep Learning on CT Images
-
 **Author**: Dheeraj Atul Salokhe  
-**Email**: x23216905@student.ncirl.ie
 
 ---
 
