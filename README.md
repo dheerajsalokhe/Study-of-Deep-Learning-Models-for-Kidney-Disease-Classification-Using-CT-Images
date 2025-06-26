@@ -1,173 +1,85 @@
 # Study-of-Deep-Learning-Models-for-Kidney-Disease-Classification-Using-CT-Images
-Deep learning models (InceptionV3, MobileNetV2, EfficientNetB0, ResNet50 and ViT models) are used to classify kidney diseases (Normal, Cyst, Tumor, Stone) from CT images. Grad-CAM visualizations improve interpretability. InceptionV3 achieved 99.82% accuracy.
 This project focuses on classifying kidney diseases using CT images and multiple deep learning models: EfficientNetB0, MobileNetV2, ResNet50, InceptionV3, and Vision Transformer (ViT). The dataset used contains annotated CT images categorized into Normal, Cyst, Stone, and Tumor.
 
-📊 Model Performance Summary
 
-Model
+# Kidney Disease Classification Using Deep Learning on CT Images
 
-Precision
+**Author**: Dheeraj Atul Salokhe  
+**Email**: x23216905@student.ncirl.ie
 
-Recall
+---
 
-F1 Score
+## 🧠 Abstract
 
-Accuracy
+Kidney disease is a growing global health issue caused by factors like diabetes and hypertension. This project applies deep learning to classify kidney conditions—Normal, Cyst, Tumor, and Stone—using CT scan images. Five deep learning models (InceptionV3, MobileNetV2, EfficientNetB0, ResNet50, Vision Transformer) were evaluated. The best-performing model, **InceptionV3**, achieved **100% test accuracy**. Grad-CAM visualizations enhance model transparency.
 
-Test Accuracy
+---
 
-Test Loss
+## 📁 Dataset
 
-EfficientNetB0
+- **Source**: [Kaggle – CT Kidney Dataset](https://www.kaggle.com/datasets/nazmul0087/ct-kidney-dataset-normal-cyst-tumor-and-stone)  
+- **Total Images**: 12,446  
+  - Normal: 5,077  
+  - Cyst: 3,709  
+  - Tumor: 2,283  
+  - Stone: 1,377  
 
-0.1664
+---
 
-0.4079
+## 🎯 Research Objectives
 
-0.2364
+- Classify CT kidney images into four categories using deep learning.  
+- Compare the performance of multiple architectures.  
+- Visualize significant image regions with Grad-CAM to support interpretability.
 
-33.98%
+---
 
-40.59%
+## 🚀 Models Compared
 
-1.3407
+| Model               | Precision | Recall | F1 Score | Accuracy | Test Accuracy | Test Loss |
+|--------------------|-----------|--------|----------|----------|----------------|-----------|
+| EfficientNetB0     | 0.1664    | 0.4079 | 0.2364   | 33.98%   | 40.59%         | 1.3407    |
+| MobileNetV2        | 0.2525    | 0.2500 | 0.2350   | 33.98%   | 82.58%         | 0.6547    |
+| ResNet50           | 0.2522    | 0.2504 | 0.2353   | 34.08%   | 99.82%         | 0.0046    |
+| InceptionV3        | 0.2517    | 0.2490 | 0.2339   | 33.95%   | **100.00%**    | **0.0001**|
+| Vision Transformer | **0.30**  | **0.33** | **0.31** | **31%** | 87.32%         | 0.3183    |
 
-MobileNetV2
+---
 
-0.2525
+## 🧪 Evaluation Metrics
 
-0.2500
+- Precision  
+- Recall  
+- F1 Score  
+- Accuracy  
+- Test Accuracy  
+- Test Loss  
+- Grad-CAM Heatmaps  
 
-0.2350
+---
 
-33.98%
+## 🔍 Grad-CAM for Model Interpretability
 
-82.58%
+Grad-CAM (Gradient-weighted Class Activation Mapping) was used to visually explain the decisions made by each deep learning model. This interpretability enhances trust among medical professionals by showing where the model focused its attention when predicting kidney diseases.
 
-0.6547
+### 💡 Key Steps:
 
-ResNet50
+- **Gradient Backpropagation**: Calculated gradients of the predicted class with respect to the last convolutional layer.  
+- **Feature Map Weighting**: Applied these gradients to the layer's activations to generate a coarse heatmap.  
+- **Overlay Visualization**: Superimposed the heatmap onto the original CT image to highlight the most influential regions.  
 
-0.2522
+### ✅ Insights:
 
-0.2504
+- Grad-CAM heatmaps consistently focused on anatomically relevant regions associated with renal pathologies.  
+- For example, cyst predictions aligned with visibly abnormal circular regions in the kidney.  
+- Helped validate and fine-tune model performance through better preprocessing and training adjustments.  
+- Enhances transparency and trust in AI-assisted diagnosis in healthcare.
 
-0.2353
+---
 
-34.08%
+## 🖥️ How to Run
 
-99.82%
-
-0.0046
-
-InceptionV3
-
-0.2517
-
-0.2490
-
-0.2339
-
-33.95%
-
-100.00%
-
-0.0001
-
-Vision Transformer (ViT)
-
-0.30
-
-0.33
-
-0.31
-
-31%
-
-87.32%
-
-0.3183
-
-🧪 Libraries Used
-
-Library
-
-Version
-
-Python
-
-3.10.12
-
-TensorFlow
-
-2.13.0
-
-Keras
-
-2.13.1
-
-NumPy
-
-1.24.3
-
-Pandas
-
-2.0.3
-
-Matplotlib
-
-3.7.2
-
-Scikit-learn
-
-1.3.0
-
-OpenCV-python
-
-4.8.1
-
-PIL (Pillow)
-
-9.5.0
-
-Accelerate
-
-1.1.0
-
-Grad-CAM
-
-1.4.7
-
-Kaggle
-
-1.5.13
-
-Jupyter
-
-1.0.0
-
-🔍 Grad-CAM for Model Interpretability
-
-To enhance the interpretability of our deep learning models, Gradient-weighted Class Activation Mapping (Grad-CAM) was applied. Grad-CAM helps visualize which regions of CT kidney images influenced the model's predictions, providing crucial insights for medical experts.
-
-🧠 Why Grad-CAM?
-
-Grad-CAM helps bridge the gap between model decisions and clinical understanding by highlighting the anatomical regions contributing most to predictions. These visualizations help build trust with healthcare professionals by offering transparency in AI decision-making.
-
-⚙️ Implementation Details:
-
-Gradient Backpropagation: Gradients of the predicted class were computed with respect to the last convolutional layer.
-
-Feature Map Weighting: These gradients were scaled and summed to generate a class-discriminative heatmap.
-
-Overlay Visualization: The resulting heatmaps were overlaid on original CT images for an interpretable view of model focus.
-
-🖼️ Insights:
-
-Grad-CAM confirmed that the models correctly focused on anatomically relevant regions:
-
-Cyst predictions aligned well with visible cyst-like structures.
-
-Variations in Grad-CAM visualizations were used to guide preprocessing and improve model training.
-
-These visual interpretations improve trust in model outputs and make AI applications in healthcare more explainable and applicable in clinical settings.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/ct-scan-kidney-disease.git
+   cd ct-scan-kidney-disease
